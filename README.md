@@ -17,3 +17,8 @@ Task bearbeiten
 Tasks filtern 
 
 Tasks nach Datum sortieren
+
+
+Starten der App
+cd ~/2026WT-
+./gradlew bootRun

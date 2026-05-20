@@ -1,14 +1,12 @@
+
 package com.htw.todo_backend;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 // @Configuration: sagt Spring Boot, dass diese Klasse Konfiguration enthält
-// @EnableWebMvc: aktiviert die Web-MVC-Konfiguration
 @Configuration
-@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
     // CORS-Konfiguration: erlaubt dem Frontend auf das Backend zuzugreifen
