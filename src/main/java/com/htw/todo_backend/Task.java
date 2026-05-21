@@ -1,18 +1,30 @@
 package com.htw.todo_backend;
 
-// Lombok-Annotationen: generieren automatisch Getter, Setter und Konstruktor
-// ohne das diese Methoden manuell geschreiben werden muss
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Getter //generiert automatisch getId(), getTitle(), etc.
-@Setter //generiert automatisch setTitle(), setDescription(), etc.
-@AllArgsConstructor //generiert einen Konstruktor mit allen Feldern
+// @Entity: markiert diese Klasse als Datenbank-Tabelle
+// JPA/Hibernate erzeugt automatisch eine Tabelle "task" in PostgreSQL
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor  // Leerer Konstruktor wird von Hibernate benoetigt
 public class Task {
-    private String title; // Titel aufgabe
-    private String description; // Beschreibung Aufgabe
-    private boolean completed; // Status Aufgabe
+
+    // @Id: markiert dieses Feld als Primaerschluessel
+    // @GeneratedValue: ID wird automatisch hochgezaehlt (1, 2, 3, ...)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;
+    private String description;
+    private boolean completed;
 }
