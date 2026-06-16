@@ -16,7 +16,7 @@ Task bearbeiten
 
 Tasks filtern 
 
-Tasks nach Datum sortieren
+Tasks sortieren
 
 
 Starten der App
